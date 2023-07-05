@@ -1,31 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import Product from './product';
-import '../App.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";  
+import Product from "./product";
+import "../App.css";
 
-const ProductList = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
-  const fetchProducts = async () => {
-    try {
-      const response = await fetch('https://fakestoreapi.com/products');
-      const data = await response.json();
-      setProducts(data);
-      console.log(data);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-    }
-  };
-
+const ProductList = ({ products }) => {
   return (
-    <div className='product-list'>
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
-      ))}
-    </div>  
+    <div className="product-list">
+      {products.length > 0   ? (
+        products.map((product, index) => (
+          <Link to={`/product/${product.id}`} key={product.id}>
+          <Product product={product} key={index} />
+         </Link>
+        ))
+      ) : (<p>search result not found</p>)
+      }
+    </div>
   );
 };
 
