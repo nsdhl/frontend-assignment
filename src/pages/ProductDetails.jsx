@@ -20,12 +20,13 @@ const url ='https://fakestoreapi.com/products';
 fetchProductById(id, url);
   }, [id])
   return (
-    <div>
-      <img src={product.image} alt={product.name} />
-      <h2>{product.name}</h2>
-      <p>Price: ${product.price}</p>
+    <div className='product-detail-container'>
+      <img src={product.image} alt={product.name} className='product-img'/>
+     <div className='product-wrapper'>
+      <h2>{product.title}</h2>
       <p>Description: {product.description}</p>
-      terobau
+      <h4>Price: ${product.price}</h4>
+    </div>
     </div>
   );
 };
