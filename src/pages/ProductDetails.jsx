@@ -16,7 +16,7 @@ const url ='https://fakestoreapi.com/products';
       const response = await fetch(`${URL}/${id}`);
       const data = await response.json();
       setProductDetail(data);
-      // setIsLoading(false);
+      setIsLoading(false);
     } catch (error) {
       console.error("Error fetching products:", error);
     }}
@@ -27,15 +27,14 @@ fetchProductById(id, url);
     
   </Spinner>
   <span>Loading...</span> </div>:
-  <div className='product-detail-container'>asdf</div>
-    // <div className='product-detail-container'>
-    //   <img src={product.image} alt={product.name} className='product-img'/>
-    //  <div className='product-wrapper'>
-    //   <h2>{product.title}</h2>
-    //   <p>Description: {product.description}</p>
-    //   <h4>Price: ${product.price}</h4>
-    // </div>
-    // </div>
+    <div className='product-detail-container'>
+      <img src={product.image} alt={product.name} className='product-img'/>
+     <div className='product-wrapper'>
+      <h2>{product.title}</h2>
+      <p>Description: {product.description}</p>
+      <h4>Price: ${product.price}</h4>
+    </div>
+    </div>
   );
 };
 
