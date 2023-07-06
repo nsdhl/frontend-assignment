@@ -3,7 +3,7 @@ import ProductList from "./components/productlist";
 import ProductDetail from './pages/ProductDetails';
 import HomePage from "./pages/HomePage";
 import { Navbar, Container, Nav, Form, Button } from "react-bootstrap";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Await } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
@@ -47,7 +47,7 @@ const App = () => {
       <BrowserRouter>
       <Routes>
           <Route path="/" element={<HomePage searchQuery={searchQuery}/>} />
-          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<Await>  <ProductDetail /></Await>} />
         </Routes>
     </BrowserRouter>
       
