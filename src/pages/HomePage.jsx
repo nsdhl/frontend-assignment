@@ -29,7 +29,8 @@ const HomePage = ({searchQuery}) =>{
           {isLoading===true? (<div className='loading-container'>  <Spinner animation="border" role="status">
     
     </Spinner>
-    <span>Loading...</span> </div>):(  <ProductList products={products}/>)}
+    <span>Loading...</span> </div>):(  
+    <ProductList products={products}/>)}
          
         </div>
     )

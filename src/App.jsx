@@ -11,7 +11,7 @@ const App = () => {
 
   const handleSearch = (e, searchQuery) => {
     e.preventDefault();
-    console.log("Search Query:", searchQuery);
+    console.log("event", e);
   };
   return (
     <div className="App">
@@ -39,7 +39,6 @@ const App = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <Button variant="outline-success">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
