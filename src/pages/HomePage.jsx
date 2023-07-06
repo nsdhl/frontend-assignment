@@ -1,12 +1,12 @@
 import {useState, useEffect} from "react";
 import ProductList from "../components/productlist";
+import {URL} from "../constants"
 const HomePage = ({searchQuery}) =>{
     const [products, setProducts] = useState([]);
       useEffect(() => {
         const fetchProducts = async () => {
           try {
-              const url = 'https://fakestoreapi.com/products';
-            const response = await fetch(url);
+            const response = await fetch(URL);
             const data = await response.json();
             const filteredData = data.filter((product) => product.title.toLowerCase().includes(searchQuery.toLowerCase()));
             if(filteredData.length === 0) {
@@ -21,7 +21,7 @@ const HomePage = ({searchQuery}) =>{
         fetchProducts();
       }, [searchQuery]);
     return(
-        <div>
+        <div className="home-page">
             <ProductList products={products}/>
         </div>
     )
