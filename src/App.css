@@ -68,3 +68,13 @@ justify-content: center;
 display: flex;
 align-items: center;
 }
+
+.spinner-border{
+    height:50px !important;
+    width:50px !important;
+}
+span{
+    font-size: 26px;
+    font-weight: 500;
+    color: #363535;
+}
